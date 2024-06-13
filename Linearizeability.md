@@ -1,0 +1,2 @@
+- implies sequential consistency
+### Linearisierungspunkt
