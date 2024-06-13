@@ -1,4 +1,4 @@
-*Vorlesung 17 Teil 1?*
+*Lecture 17 pt. 1?*
 # Idea
 Threads go to sleep with #random duration and the duration increases each time the resource is not free.
 ```

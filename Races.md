@@ -8,12 +8,11 @@ Data can change: all tasks/threads can potentially access them
 Solution: allow only one task/thread to access **at a time** (thereby protect state)
 ### Protection of state
 - exclusive access
-- intermediate inconsistent states should not be observed (TODO: book)
-**Methods**:
-#### #Locks 
+- intermediate inconsistent states should not be observed
+#### **Methods**:
+##### #Locks 
 Mechanism to ensure exclusive access / atomicity
-
-#### #TransactionalMemory
+##### #TransactionalMemory
 Programmer describes a set of actions that need to be #atomic ⚛
 
 ### The problem of #Interleaving :

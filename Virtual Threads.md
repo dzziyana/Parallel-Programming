@@ -1,6 +1,6 @@
 - decouple OS threads from threads visible to the programmer
-- native threads still used as carrier threads
-- JVM decides which instructions are assigned to carrier threads
+- **native threads** still used as **carrier threads**
+- **JVM** decides which instructions are assigned to carrier threads
 => more efficient arrangements possible & reduced number of expensive context switches
 A #VirtualThread is a Java entity, not a wrapper around the OS
 - cheap to create

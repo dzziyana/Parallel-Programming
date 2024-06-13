@@ -7,13 +7,14 @@ Otherwise we assume a multithreaded environment where processes can arbitrarily 
 => Absolutely **no assumptions** about threads' behavior **outside of critical sections**
 ## Critical section - the proper definition
 Code with following conditions...
-1. **Mutual exclusion**
+#### 1. **Mutual exclusion**
 Statements from critical sections of two or more processes (threads) **must not be interleaved**
-2. **Freedom from [[Deadlock]]**
+#### 2. **Freedom from [[Deadlock]]**
 If *some* processes are trying to enter a critical section then *one of them* must eventually succeed
-3. **Freedom from [[Starvation]]**
+#### 3. **Freedom from [[Starvation]]**
 If *any* process (thread) tries to enter its critical section, then that process must eventually succeed
 
+## Interrupt Requests
 #IRQ s = interrupt requests. hardware signal sent to the processor that temporarily stops a running program and allows a special program, an [interrupt handler](https://en.wikipedia.org/wiki/Interrupt_handler "Interrupt handler"), to run instead.
 ... can be deactivated and switched back on with the critical section in-between in order to implement critical sections on a single core system.
 
