@@ -1,5 +1,5 @@
 https://www.baeldung.com/java-fork-join
-#### General comparison to [[ExecutorService - WIP]]
+#### General comparison to [[ExecutorService (WIP)]]
 - uses a *pool* of threads
 
 ![[Screenshot 2024-06-12 at 13.52.58.png]]
