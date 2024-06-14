@@ -18,3 +18,5 @@
 - element(): Returns the element at the front of the queue without removing it. If the queue is empty, it throws an exception.
 
 - peek(): Returns the element at the front of the queue without removing it. If the queue is empty, it returns null.
+
+# [[Skip List (WIP)]]

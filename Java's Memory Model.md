@@ -1,6 +1,6 @@
 #### (minimale) Garantien (/definitions) wie JVM mit der Memory-Hardware interagiert
-• More Safety  More Guarantees  Less Optimization Possible  Less Speed
-#### - volatile fields
+More Safety  More Guarantees  Less Optimization Possible  Less Speed
+#### volatile fields
 • 1) compiler MUST NOT reorder/delete
 • 2) caches must IMMEDIATELY write to main memory
 ##### example:
@@ -22,15 +22,18 @@ class C {
 }
 ```
 Kein bad interleaving möglich für assert, aber falls $T_{1}$ und  $T_{2}$ auf unterschiedlichen Cores laufen...
-- x = 1, y = 1 im Cache vom Core von $T_1$
-- y = 1 im Main Memory, $T_2$ kopiert im eigenen Cache
-- $T_2$ liest vom eigenen Cache -> y = 1 & x = 0 -> a = 1 & b = 0
-- x = 1 im MainMemory, $T_2$ kopiert in eigenen Cache
+- **x = 1, y = 1** im Cache vom Core von $T_1$
+- **y = 1** im Main Memory, $T_2$ kopiert in eigenen Cache
+- $T_2$ liest vom eigenen Cache $\rightarrow$ **y = 1 & x = 0** $\rightarrow$ **a = 1 & b = 0**
+- **x = 1** im Main Memory, $T_2$ kopiert in eigenen Cache
+- > *oopsie*
+$\Rightarrow$ accesses  are not strictly atomic (*Lecture 18 pt 2*)
+![[Pasted image 20240613131911.png]]
 #### in volatile fields
 ... accesses don't count as data races
 ... slower than regular fields, faster than locks
 **... rather don't use them**
-f.e. used in a *turn* variable context where else the different threads would have different views on the state of the variable => atomic
+f.e. used in a ***turn*** variable context where else the different threads would have different views on the state of the variable => atomic
 
 ## JMM : Program Order
 is a total order of intra-thread (not between threads) actions., does not provide an ordering guarantee for memory accesses. 

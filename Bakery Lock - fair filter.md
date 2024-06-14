@@ -1,4 +1,3 @@
-#TODO :
-#### #MRSW access requirement
+#### #MRSW access requirement - #TODO
 
-![[Pasted image 20240613143601.png]]
+![[Bakery Algorithm - figure 1.png]]
