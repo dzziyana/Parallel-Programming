@@ -2,7 +2,7 @@
 #Reductions - only work with **associative operations**
 #Maps - each element of a data structure gets **processed individually**
 
-## #prefixSum
+# Prefix Sum
 
 0. Creates tree - **NEITHER** a map nor a reduce operation)
 1. **UP**-pass:  builds the tree bottom up (in parallel) - **REDUCE**
@@ -18,8 +18,8 @@ from_left = parent.from_left + left.sum;
 ```
 output = input + from_left
 ```
-=> #parallelism is $\frac{n}{\log n}$
-### details :
+#### $\Rightarrow$ Parallelism is $\frac{n}{\log n}$
+### Details :
 ![[Pasted image 20240430124706.png]]
 ![[Pasted image 20240430124823.png]]
 ![[Pasted image 20240430124840.png]]
@@ -35,10 +35,10 @@ for(i = lo+1; i < hi; i++)
 - **Min/Max** of all elements **to the left of i**
 - **existence** of an element satisfying some property **to the left of i**
 - **count** **of el-s to the left of i** satisfying some property
-## #Pack
-Given an array, produce an output array containing only elements such that f(el) is true
+# Pack
+Given an array, produce an output array containing only elements such that `f(el)` is true
 example: input 
--> can be reduced to a prefix problem:
+$\rightarrow$ can be reduced to a prefix problem:
 1. parallel #map to compute a bit-vector for true elements
 ```
 bits [1, 0, 0, 0, 1, 0, 1, 1, 0, 1]
@@ -55,10 +55,10 @@ FORALL (i=0; i < input.length; i++){
 		output[bitsum[i]-1] = input[i];
 }
 ```
-=> O(n) work, O(logn) #span
-### partitioning #QuickSort with #Pack :
+#### $\Rightarrow$ $O(n)$ work, $O(logn)$ span
+## partitioning QuickSort with Pack :
 - pack el-s less than pivot into the left side of the auxiliary array (aux)
 - pack el-s greater than pivot into the right side of aux
 - put pivot inbetween and sort recursively
-=> $O(logn)$ span for partition, in total $O(log^{2}n$) due to the default $O(logn)$ parallelism
-![[Pasted image 20240612153229.png]]![[Pasted image 20240612153403.png]]
+### => $O(logn)$ span for partition, in total $O(log^{2}n$) due to the default $O(logn)$ parallelism
+![[Pasted image 20240612153229.png]]

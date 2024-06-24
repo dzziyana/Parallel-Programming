@@ -1,7 +1,7 @@
 Optimistic as opposed to [[Amdahl's Law]]
 
-  *From Lecture7* 
-![[Pasted image 20240611162325.png]]
+  *From Lecture 7* :
+![[Gustafson's and Amdahl's Law.png]]
 ![[Pasted image 20240611162351.png]]
 f : serial fraction
 P : parallel processing units

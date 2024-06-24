@@ -1,16 +1,21 @@
 ##### Wikipedia
 In [concurrent computing](https://en.wikipedia.org/wiki/Concurrent_computing "Concurrent computing"), **deadlock** is any situation in which no member of some group of entities can proceed because each waits for another member, including itself, to take action, such as sending a message or, more commonly, releasing a [lock](https://en.wikipedia.org/wiki/Lock_(computer_science) "Lock (computer science)").[[1]
-### Formal definition
-*from Lecture 17 pt 2*
-> Two or more processes **are mutually blocked** because each process waits for another of these processes to proceed.
+
+*from Lecture 17 pt 2* :
+>[! Formal definition]
+> Two or more processes are **mutually blocked** because each process waits for another of these processes to proceed.
 #### $\exists$ a cycle in a [thread-lock directed graph] or state diagram.
-![[Pasted image 20240613144021.png]]
+![[Deadlock illustration.png]]
 ***Legend:**
  Red: $T_n \rightarrow R_n$ = thread $T_n$ **attempts to acquire** resource (lock) $R_n$
 Green: $R_n \rightarrow T_n$ = resource (lock) $R_n$ **is held** by thread $T_n$
 
+## Livelock
+>[!Definition]
+  Competing processes are able to **detect a potential deadlock** but make **no observable progress** while trying to resolve it
+
 > Deadlocks can, in general, not be healed. Releasing locks generally leads to inconsistent state.
-> -> ***Avoidance*** is the only option
+> -> ***Avoidance by design*** is the only option
 
 Some notable examples of nuanced deadlock situations is the **account-transfer problem** as well as the historic example of the .append() method in the StringBuffer class of Java standard library (They ended up creating the StringBuilder class because of that)
 ### Avoidance techniques 
@@ -31,4 +36,5 @@ Freedom of Deadlock = The system makes progress as a whole
 -> weaker condition than...
 Freedom of [[Starvation]] = All threads make progress. 
 e.g.: A mutual exclusion algorithm that must **choose** to allow **one of two processes** into a [critical section](https://en.wikipedia.org/wiki/Critical_section "Critical section") (cf. [[Behind Locks]]) and picks one **arbitrarily** is **deadlock-free, but not starvation-free.**
+
 

@@ -1,9 +1,11 @@
-# #SpeedUp on P processors
-## $\frac{T_1}{T_P}$
-### Perfect linear speedup $\leftrightarrow$ if speedup = P
-### #Parallelism is the speedup over $T_\infty$ ( #span ) i.e. maximum possible speedup
+## [SpeedUp] on P processors
+### $\frac{T_1}{T_P}$
+## Perfect linear speedup $\leftrightarrow$ if speedup = P
+### $\frac{T_1}{T_P} = P$
+## [Parallelism] is the speedup over $T_\infty$ ( #span ) i.e. maximum possible speedup
+### $\frac{T_1}{T_\infty}$
 
-# Expected time:
+# Expected time
 ## $T_P = O((\frac{T_1}{P})+T_\infty)$
 
 # [[Amdahl's Law]]
@@ -15,4 +17,4 @@
 
 ## $S_{P} = f + p(1-f) = p - f(p-1)$
 
-**f : serial fraction.**
+*f : serial fraction.*

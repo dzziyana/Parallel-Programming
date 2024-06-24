@@ -1,1 +1,1 @@
-![[Pasted image 20240614174029.png]]
+![[Thread States in Java.png]]

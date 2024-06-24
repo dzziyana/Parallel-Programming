@@ -1,6 +1,6 @@
-In opposition to [[Parallel Programming/Gustafson's Law]]
+In opposition to [[Gustafson's Law]]
 *From Lecture 7:*
-![[Pasted image 20240611162617.png]]
+![[Amdahl's and Gustafson's Law.png]]
 
 ![[Pasted image 20240611162351.png]]
 f : serial fraction

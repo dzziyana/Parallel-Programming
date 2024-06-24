@@ -28,7 +28,7 @@ Kein bad interleaving möglich für assert, aber falls $T_{1}$ und  $T_{2}$ auf 
 - **x = 1** im Main Memory, $T_2$ kopiert in eigenen Cache
 - > *oopsie*
 $\Rightarrow$ accesses  are not strictly atomic (*Lecture 18 pt 2*)
-![[Pasted image 20240613131911.png]]
+![[Memory illlustration.png]]
 #### in volatile fields
 ... accesses don't count as data races
 ... slower than regular fields, faster than locks

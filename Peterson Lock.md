@@ -9,7 +9,7 @@ code incorrect tho because the entire boolean array is marked as volatile, where
 #TODO *: why AtomicIntegerArray and not AtomicBoolean[]? (internet suggests the latter is faster) Also, find the proper implementation from lecture*
 
 *From TA slides:*
-![[Pasted image 20240613124106.png]]
+![[Peterson's Lock - TA slides.png]]
 
 
 #TODO

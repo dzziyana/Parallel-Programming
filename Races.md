@@ -103,4 +103,4 @@ The same lock can (and often should) #guard multiple locations
 => Clearly document the guard for each location. In Java, often the guard is the object containing the location - ***this*** inside the object’s methods. But also often guard a larger structure with one lock to ensure mutual exclusion on the structure.
 
 - Consistent locking
-- [[Lock granularity]]
+- [[Locking Strategies (WIP)]]

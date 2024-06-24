@@ -11,8 +11,12 @@ $T_0$  $\underrightarrow{X}$  $T_1$
 ### requires a special Queue...
 # Circular Buffer - tailored queue implementation
 ![[Circular Buffer - illustration.png]]
+## Basic Idea
 ![[Circular Buffer (Queue) - initial implementation.png]]
 ### Helper functions
 ![[Circular Buffer - helper functions.png]]
 
-
+## Concurrency-safe implementation (with monitor)
+![[Producer-Consumer Queue with Monitor.png]]
+### ... with explicit Lock
+![[Pasted image 20240616180535.png]]

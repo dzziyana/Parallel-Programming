@@ -1,7 +1,7 @@
 ## Why?
 - **Locks** provide atomicity via mutual exclusion. However, they **lack the means for threads to communicate about changes.**
 - Thus, they provide no order and are hard to use.
-$\rightarrow$ Example: *[[Producer-Consumer (WIP)]] queues*
+$\rightarrow$ Example: *[[Producer-Consumer]] queues*
 # Semaphore
 ### ~ generalized lock
 i.e. a lock can b e implemented by means of a semaphore and regarded as a special instance ("Spezialfall")
@@ -10,7 +10,7 @@ Locks ensure that only one thread operates between lock() and unlock(), whereas 
 #### formally...
 ~ data type with an integer value n ("semaphore number")
 ### pseudocode
-![[Pasted image 20240613155806.png]]
+![[Semaphore - pseudocode.png]]
 # Rendezvous
 *Rendezvous point:* location in code where threads P and Q wait for each to arrive.
 ### Idea
@@ -18,10 +18,10 @@ The thread that first reaches the rendezvous-section of the code must wait for o
 - synchronized can't do that
 - ... so instead it's done with 2 semaphores
 ### Bad pseudocode example - Deadlock
-![[Pasted image 20240613162621.png]]
+![[Rendezvous pseudocode bad.png]]
 ### Pseudocode example - legit
-![[Pasted image 20240614174936.png]]
-#TODO "pre-charging semaphores" optimization*
+![[Rendezvous pseudocode legit.png]]
+#TODO "pre-charging semaphores" optimization
 ### Implementing semaphores without spinning
 via FIFO process list $Q_S$ :
 ![[Pasted image 20240614175130.png]]
@@ -31,8 +31,14 @@ via FIFO process list $Q_S$ :
 - everyone **waits** til ***counter* = max**
 - threads pass barrier 1-by-1...
 ...controlled, only n threads may enter, even if m > n threads are waiting
-...a second semaphore (on ***barrier***) operates as **turnstile**
+...**a second semaphore** (on ***barrier***) operates as **turnstile**
+## Bad pseudocode
+![[Barrier bad pseudocode.png]]
+- is not reusable since count isn't 0 anymore
+- This example only works if all threads pass and only then restart from top
+#personalTODO
+
 ## Two-Phase Barrier - solution for proper reusability
 ### ... code example
-![[Pasted image 20240614175345.png]]
+![[Two-Phase Barrier code.png]]
 
