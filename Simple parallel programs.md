@@ -1,4 +1,4 @@
-[[Maps and Reduces]]
+[[Map Operation]] and [[Reduction Operation]]
 #Reductions - only work with **associative operations**
 #Maps - each element of a data structure gets **processed individually**
 
