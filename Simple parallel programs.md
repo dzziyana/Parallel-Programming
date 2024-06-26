@@ -1,7 +1,6 @@
 [[Map Operation]] and [[Reduction Operation]]
 #Reductions - only work with **associative operations**
 #Maps - each element of a data structure gets **processed individually**
-
 # Prefix Sum
 
 0. Creates tree - **NEITHER** a map nor a reduce operation)
