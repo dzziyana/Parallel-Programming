@@ -8,6 +8,7 @@ a **lock** is a [synchronization primitive](https://en.wikipedia.org/wiki/Syn
 [[Behind Locks]]
 [[Decker's Algorithm]] (Lock)
 [[Peterson Lock]]
+[[Filter Lock]]
 
 # Anatomy of a lock
 The execution of a `lock()` call is divided into **doorway section** and **waiting section**.
@@ -34,5 +35,7 @@ $\rightarrow$ e.g. a spin wait  (cf. [[Spinlock]])
 A lock is defined as starvation free if and only if when one or more threads are contesting for it, **all of them** are guaranteed to acquire it within a finite amount of time.
 ## [[Deadlock]] free
 A lock is defined as deadlock free if and only if when one or more threads are contesting for it, **(at least) one** of them is guaranteed to acquire it within a finite amount of time.
+
+## Mutual exclusion
 
 

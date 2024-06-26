@@ -1,8 +1,42 @@
+# General
+>[!Warning]
+> When aquiring **multiple locks**, define an **order** on the objects you are trying to lock so that objects are always locked in the same order!
+> 
+> **Erronous** example:
+> ```java
+> public static void doSomething(Object a, Object b) {
+> 	synchronized(a) {
+> 		synchronized(b) {
+> 			something(a, b);
+> 		}
+> 	}
+> }
+> ```
+> **Correct**:
+> ```java
+> public static void doSomething(Object a, Object b) {
+> 	Object first = a;
+> 	Object second = b;
+> 	if (a.compareTo(b) > 0) {
+> 		first = b;
+> 		second = a;
+> 	 }
+> 	 synchronized(first) {
+> 		 synchronized(second) {
+> 			 something(a, b);
+> 		 }
+> 	 }
+> }
+> ```
+> 
+> 
+
 # Lock granularity
 **Coarse-grained**: fewer locks with more objects per lock
 - simple to implement, faster to implement operations that access multiple locations
 **Fine-grained**: opposite
 - more simultaneous access
+- often allows for more parallelism, but each lock has an overhead and requires memory.
 
 # Pessimistic vs Optimistic locking
 ### Pessimistic Concurrency Control
