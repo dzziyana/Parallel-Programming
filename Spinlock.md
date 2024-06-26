@@ -6,19 +6,35 @@ Because they avoid overhead from OS [process rescheduling](https://en.wikipedia
 
 ### Test and Set 
 **Init  (lock)**
+```java 
 lock = 0;
+```
 **Acquire (lock)**
+```java 
 while !TAS(lock); //wait
+```
 **Release (lock)**
+```java
 lock = 0;
+```
+
 
 ## Compare and Swap 
 **Init (lock)**
+```java
 lock = 0;
+```
+
 **Acquire (lock)**
+```java
 while (CAS(lock,0,1) != 0);
+```
+
 **Release (lock)**
+```java
 CAS (lock, 1, 0);
+```
+
 
 # Performance measurement 
 **Sequential bottleneck** : threads fight for the memory bus during call of `getAndSet()` $\Rightarrow$ #Contention 

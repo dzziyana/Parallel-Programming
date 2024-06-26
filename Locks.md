@@ -28,6 +28,7 @@ $\rightarrow$ e.g. a spin wait  (cf. [[Spinlock]])
 ![[Pasted image 20240611192134.png]]
 #TODO *Legend for the notation. What do the variables in the exponent (j and k) exactly signify? Insert a reference to the part of the study material where this notation is introduced.*
 
+
 ### A lock is fair if it **fulfills FIFO order**. 
 > *The FIFO order is fulfilled...*
 > When a thread that finishes the doorway section before some other threads have started their doorway sections is ***guaranteed to acquire the lock first.*** 

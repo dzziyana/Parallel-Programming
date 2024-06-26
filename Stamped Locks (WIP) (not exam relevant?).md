@@ -1,3 +1,7 @@
+> [!Error]
+> This is surely not exam relevant, since it was never mentioned in the Lecture!
+
+
 - they also support [[ReadWrite Lock in Java (not exam relevant?)]]
 - the locking method returns a Long value **stamp**
 - The **stamps** are needed to release a lock or check if the lock is still valid

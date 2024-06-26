@@ -1,4 +1,4 @@
-*Lecture 17 pt. 1?*
+#Slides-Lecture-16 page 62
 # Idea
 Threads go to sleep with #random duration and the duration increases each time the resource is not free.
 ```

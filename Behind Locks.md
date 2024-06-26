@@ -21,8 +21,17 @@ If *any* process (thread) tries to enter its critical section, then that process
 ##### Single Writer Multiple Reader: 
 > [! Functionality]
 >Only 1 concurrent write, but multiple concurrent reads allowed
-###### *Safe Register*, i.e.
-- Any read **not concurrent with a write** returns the **current value** of r. 
-- Any read **concurrent with a write** can return **any value of the domain** of r.
+##### Safe Single Writer Multiple Reader Register
+> [!Warning]
+> Name misleading! Only called *safe* for historic reasons
 
+> [!Definition]
+> Register $r$: basic memory object, can be shared or not, operations `r.read()` and `r.write(v)`.
+
+> [!Definition] 
+> **Safe Register** 
+> + any read not concurrent with a write returns the current value of r 
+> +  any read concurrent with a write can return *any value* (of the domain of r)
+>   
+>   Note: if any read concurrent with writes can only return a value of one of the values (previous, new) then the register is called *regular*
 

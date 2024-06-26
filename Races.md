@@ -1,4 +1,4 @@
-Approaches to avoiding clashes in memory:
+`Approaches to avoiding clashes in memory:
 ## - **Immutability**
 ## - **Isolated mutability**
 Data can change but only one thread can access them

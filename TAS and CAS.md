@@ -1,4 +1,5 @@
 # Hardware support for atomic operations
+Both **TAS** and **CAS** are **Read-Modify-Write** operations
 
 ![[Pasted image 20240613130444.png]]
 Java does not have a true TAS operation :P
