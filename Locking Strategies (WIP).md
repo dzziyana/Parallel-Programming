@@ -1,4 +1,7 @@
+#Slides-Lecture-19 
 # General
+
+
 >[!Warning]
 > When aquiring **multiple locks**, define an **order** on the objects you are trying to lock so that objects are always locked in the same order!
 > 
@@ -31,6 +34,20 @@
 > 
 > 
 
+> [!Tip]
+> You can just generate an order by using unique IDs for your objects.
+> ```java
+> class BankAccount {
+>	private static final AtomicLong counter = new AtomicLong();
+>	private final long index = counter.incrementAndGet();
+>	...
+>	void transferTo(int amount, BankAccount to) {
+>		if (to.index < this.index)
+>		...
+>	}
+> }
+
+
 # Lock granularity
 **Coarse-grained**: fewer locks with more objects per lock
 - simple to implement, faster to implement operations that access multiple locations
@@ -50,12 +67,27 @@ assumes **contention is unlikely.** It will attempt to get the data without lock
 	- 1) Find all nodes involved (without locking)
 	- 2) Make change iff everything is fine
 
-[[Optimistic Locking (WIP)]]
+[[Optimistic Locking]]
 
 # Lazy Locking
 
-# Lock-free Programming
-
-# Comparison
-## Example - LinkedList
+# Example - LinkedList
 ![[Locking Strategies - LinkedList.png]]
+
+## Coarse-grained locking
+Trivial
+![[LinkedListCourseGrained.png]]
+## Fine-grained locking
+> [!Important]
+> Use **hand-over-hand locking** to prevent other threads passing the current thread!
+
+![[LinkedListFineGrainedRemove.png]]
+### Disadvantages
+- `aquire` and `release` has to be called a lot of times before the desired elements are reached
+- the hand-over-hand locking causes faster threads that want to reach an element at the end of the list to wait for a slower thread 
+
+
+## Optimistic locking
+See [[Optimistic Locking]]
+## Lazy locking
+See [[Lazy Locking]]

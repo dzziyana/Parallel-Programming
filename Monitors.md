@@ -1,3 +1,4 @@
+#Slides-Lecture-19
 *aka intrinsic locks, monitor locks*
 A monitor is not an object, it’s an **interface**
 > "any object intended to be used safely by multiple threads"

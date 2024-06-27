@@ -1,7 +1,8 @@
+
 **Wikipedia**
 a **lock** is a [synchronization primitive](https://en.wikipedia.org/wiki/Synchronization_primitive "Synchronization primitive") that prevents state from being modified or accessed by multiple [threads of execution](https://en.wikipedia.org/wiki/Threads_(computer_science) "Threads (computer science)") at once.
 
-#### List of lock types
+## List of lock types
 [[Backoff Lock]]
 [[TATAS Lock]]
 [[Spinlock]]
@@ -9,6 +10,10 @@ a **lock** is a [synchronization primitive](https://en.wikipedia.org/wiki/Syn
 [[Decker's Algorithm]] (Lock)
 [[Peterson Lock]]
 [[Filter Lock]]
+[[Reader-Writer Lock]]
+
+## Locking strategies
+See [[Locking Strategies (WIP)]]
 
 # Anatomy of a lock
 The execution of a `lock()` call is divided into **doorway section** and **waiting section**.
@@ -39,4 +44,14 @@ A lock is defined as deadlock free if and only if when one or more threads are c
 
 ## Mutual exclusion
 
+
+# Guide for Condition waits
+> [!Important]-  
+> 
+> + Always have a condition predicate
+> + Always test the condition predicate:
+> 	- before calling wait
+> 	- after returning from wait
+>  + Always call wait in a loop
+>  + Ensure state is protected by lock associated with condition
 
