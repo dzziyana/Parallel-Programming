@@ -20,6 +20,6 @@
 > + An invocation $J$ of `r.read()` returns the value $v$ written by the invocation $K$ with **closest preceding effect time** $\tau(K)$ 
 
 ##### Example of an Atomic Register
-![[Pasted image 20240626165712.png]]
+![[AtomicRegisterExampel.png]]
 #### Atomic Operation
 **= code construct that, if executed, triggers an atomic action in an atomic register**

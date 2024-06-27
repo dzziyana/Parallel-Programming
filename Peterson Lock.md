@@ -12,8 +12,8 @@ code incorrect tho because the entire boolean array is marked as volatile, where
 ![[Peterson's Lock - TA slides.png]]
 
 ## Correctness proof 
-![[Pasted image 20240626125953.png]]
-![[Pasted image 20240626131128.png]]
+![[PetersonLockMutualExclusionProof.png]]
+![[PetersonLockStarvationFreedomProof.png]]
 
 #TODO
 MRMW access requirement.

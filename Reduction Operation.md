@@ -32,7 +32,7 @@ protected Long compute() {
 }
 ```
 
-![[Pasted image 20240626113520.png]]
+![[ReduceGraphic.png]]
 
 We went from $O(n)$ sequentially to $O(n \log n)$ in parallel (with unlimited processors, of course)
 ## Example with [[ForkJoin]] (Recursive Sum, cutoff)

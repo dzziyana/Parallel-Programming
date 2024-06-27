@@ -28,11 +28,11 @@ Tasks : haben ein return value
 Action : void (map operations!)
 
 ## Fork Join Program as DAG
-![[Pasted image 20240626120230.png]]
+![[ForkJoinAsDAG.png]]
 **Simple Example**: (most of our algorithms look similar)
-![[Pasted image 20240626120249.png]]
+![[ForkJoinGraph.png]]
 ### Performance 
-![[Pasted image 20240626120410.png]]
+![[ForkJoinDAGTp.png]]
 
 See [[Basic formulas]]
 

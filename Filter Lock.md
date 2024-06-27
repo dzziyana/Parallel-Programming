@@ -4,7 +4,7 @@ The Filter Lock is an extension of the [[Peterson Lock]] from 2 to $n$ Threads.
 - in order to enter CS, a thread has to eliminate all levels
 - **for each level, Peterson's mechanism is used** to filter **at most one thread** (victim) which stays behind, if other threads are at a higher level
 ## Pseudocode
-![[Pasted image 20240626131840.png]]
+![[FilterLockPseudoCode.png]]
 > [!Warning]
 > `level` and `victim` both have to be `AtomicIntegerArray`s
 
@@ -29,7 +29,7 @@ Each level can be seen as a [[Peterson Lock]]
 ```
 
 ## Java Implementation
- ![[Pasted image 20240626131530.png]]
+ ![[FilterLockCode.png]]
 
 ## Problems
 - The Filter lock is not fair #personalTODO , it is **not** first come, first serve
