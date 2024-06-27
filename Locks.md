@@ -13,7 +13,7 @@ a **lock** is a [synchronization primitive](https://en.wikipedia.org/wiki/Syn
 [[Reader-Writer Lock]]
 
 ## Locking strategies
-See [[Locking Strategies (WIP)]]
+See [[Locking Strategies]]
 
 # Anatomy of a lock
 The execution of a `lock()` call is divided into **doorway section** and **waiting section**.
@@ -43,6 +43,42 @@ A lock is defined as starvation free if and only if when one or more threads are
 A lock is defined as deadlock free if and only if when one or more threads are contesting for it, **(at least) one** of them is guaranteed to acquire it within a finite amount of time.
 
 ## Mutual exclusion
+
+# Performance
+### Uncontended Case
++ Threads do not compete for the lock
++ locks try to have minimal overhead
++ typically "just" the cost of an atomic operation
+### Contended Case
++ threads do compete for the lock
++ can lead to significant performance degradation
++ starvation can occur
++ there are locks that try to optimize for this case
+# Disadvantages
+### General
++ **Pessimistic by design** - Mutual exclusion always enforced
++ [[#Performance]]  
++ **Ahmdal's law** - enforcing mutual exclusion makes this part of the code sequential!
++ **Delays in the CS** -> Affect all threads
++ **Death of a thread in the CS** -> No progress at all
++ **Deadlocks / Livelocks**
++ Can not be used in **interrupt handlers** without precautions
+
+### Spinlocks
++ missing FIFO behaviour
++ Computing resources wasted / performance degraded especially for long lived contention
++ no notification mechanism
+### Locks with waiting / scheduling
++ Require support from runtime system (OS / scheduler)
++ Data structures for scheduled locks need to be protected against concurrent access
+	+ again with spinlocks OR
+	+ using lock free datastructures
++ higher wakeup latency (due to scheduler)
+=> hybrid solultions
+
+
+All of these are motivation for [[Lock Free Programming]]
+
 
 
 # Guide for Condition waits

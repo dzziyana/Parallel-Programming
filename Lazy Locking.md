@@ -53,4 +53,4 @@ $$\mathbb{P}(height = n) = 0.5^n$$
 >[!Important]
 >`contains` is **[[Progress Assumptions and Progress Conditions#Wait-free|wait free!]]**
 
-![[Pasted image 20240627154947.png]]
+![[SkipListContains.png]]
