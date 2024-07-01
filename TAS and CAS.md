@@ -1,6 +1,11 @@
 # Hardware support for atomic operations
 Both **TAS** and **CAS** are **Read-Modify-Write** operations
 
+> [!Info]
+> CAS can be implemented wait-free on hardware!
+> #Slides-Lecture-22
+> 
+
 ![[Pasted image 20240613130444.png]]
 Java does not have a true TAS operation :P
 ![[Pasted image 20240613131004.png]]

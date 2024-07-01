@@ -62,3 +62,42 @@ is a total order of intra-thread (not between threads) actions., does not provid
 **HB consistency**: When reading a variable, we see either the last write (in HB) or any other unordered write.
 ▪ This means races are allowed!
 
+## Memory Operations
+#Slides-Lecture-22 
+#TODO Not sure if this belongs here (Including [[Java's Memory Model#Synchronization]] and [[Java's Memory Model#Real-World Hardware Memory]])
+
+**Reminder**: Writing to memory is lazy by default (memory hierachy), instead, write to cache
+
+**Recall:**
++ **Read** a memory location: Load data into cache
++ **Write** a memory location
+	+ update cached copy
+	+ lazily write cached data back to memory
+
+"Flag violating" history is OK
++ processor delays writing to memory until after reads have been issued.
+
+### Synchronization
+#Slides-Lecture-22
+#### Explicit
+**Memory barrier instruction**
++ Flush unwritten caches
++ Bring caches up to date
+Compilers often do this for you
+
+**Implicit**
+In Java: Ask compiler to keep variable up to date using [[Java's Memory Model#volatile fields|volatile]] (Also inhibits reordering, removing from loops & other optimizations)
+
+### Real-World Hardware Memory
+#Slides-Lecture-22 
+**Weaker than [[Sequential Consistency]]**
+
+But you can get sequential consistency at a price.
+
+Concept of [[Linearizability]] more appropriate for high-level software.
+
+> [!In short]
+> [[Linearizability]] Good for high level objects
+> 
+> [[Sequential Consistency]] Goot way to think about hardware models
+
