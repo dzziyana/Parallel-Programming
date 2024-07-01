@@ -5,15 +5,15 @@
 
 #Slides-Lecture-22 
 > [!Motivation]
-> Each method should take effect **instantaneously** between invocation and response events. (see [[HIstories]])
+> Each method should take effect **instantaneously** between invocation and response events. (see [[Histories]])
 > 
 
 > [!Definition]
-> A [[HIstories|History]] $H$ is **linearizable** if it can be extended to a [[HIstories|History]] $G$
+> A [[Histories|History]] $H$ is **linearizable** if it can be extended to a [[Histories|History]] $G$
 > + appending **zero or more** responses to pending invocations that **took effect**
 > + discarding **zero or more** pending invocations that **did not take effect**
 >   
->  such that $G$ is equivalent to a [[HIstories#sequential|legal, sequential]] History $S$ with 
+>  such that $G$ is equivalent to a [[Histories#sequential|legal, sequential]] History $S$ with 
 >  $$\huge\rightarrow_G \subset \rightarrow_S$$
 
 > [!Note]
