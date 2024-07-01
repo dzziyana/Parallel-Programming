@@ -5,10 +5,13 @@
 - -> abstraction: it happens in a single moment 
 - but several actions can still happen in different orders & form bad interleavings
 
+
+#### Atomic Register 
 > [!Error]
 > The following is **wrong** according to the lecture slides:
->
-#### Atomic Register = hardware component
+#FIXME 
+
+= hardware component
 - register = individual memory cell, stores 0/1 (or X/Z)
 - atomic registers have hardware support for atomic actions
 
