@@ -70,11 +70,11 @@ Erroneous program behavior caused by **an unfavorable execution order** of a mul
 >  Typically, problem is some intermediate state that “messes up” a concurrent thread that “sees” that state
 
 If one were to implement a #Stack in a concurrent context, 
-```
+```java
 E peek() {
-E ans = pop(); 
-push(ans);
-return ans;
+	E ans = pop(); 
+	push(ans);
+	return ans;
 }
 ```
 would be wrong, even if push() and pop() are synchronized, due to the inconsistent intermediate state it creates
@@ -83,7 +83,18 @@ Invariant to start with: if there has been a push() and no pop(), then isEmpty()
 Moreover, we want to maintain the LIFO order when returning values.
 ![[Pasted image 20240505134754.png]]
 ![[Pasted image 20240505135018.png]]
-### Memory-location principles
+
+#### Number of interleavings
+#Slides-Lecture-15 
+**Assuming 2 threads and $k$ statements each:
++ The merged list has length $k + k = 2k$
++ Once we know which of the $2k$ positions in the merged list are from thread 1, the interleaving is determined. 
+$\Longrightarrow$ sampling without replacement (draw $k$ positions of $2k$ total)
+$\Longrightarrow$ $\left ( \matrix{2k \\ k} \right) = \mathcal{O} \left( \frac{4^k}{\sqrt{2k}} \right)$
+
+E ans = pop(); 
+push(ans);
+return ans;### Memory-location principles
 #### 1. Thread-local
 Whenever possible, do not share resources
 Achievable through:

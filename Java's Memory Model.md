@@ -1,13 +1,13 @@
-#### (minimale) Garantien (/definitions) wie JVM mit der Memory-Hardware interagiert
-More Safety  More Guarantees  Less Optimization Possible  Less Speed
+#Slides-Lecture-15 
+**(minimale) Garantien (/definitions) wie JVM mit der Memory-Hardware interagiert**
 #### volatile fields
-• 1) compiler MUST NOT reorder/delete
-• 2) caches must IMMEDIATELY write to main memory
+1.  compiler **MUST NOT** reorder/delete (see [[Memory Reording]])
+1.  caches must IMMEDIATELY write to main memory
 ##### example:
-```
+```java
 class C {
-	private volatile int x = 0;
-	private volatile int y = 0;
+	private int x = 0;
+	private int y = 0;
 	void f() {
 	//Thread 1
 		x = 1;
@@ -21,12 +21,13 @@ class C {
 	}
 }
 ```
-Kein bad interleaving möglich für assert, aber falls $T_{1}$ und  $T_{2}$ auf unterschiedlichen Cores laufen...
+Kein [[Races#- BadInterleaving aka [High Level Race Condition] , high semantic level|bad interleaving]] möglich für assert, aber falls $T_{1}$ und  $T_{2}$ auf unterschiedlichen Cores laufen...
 - **x = 1, y = 1** im Cache vom Core von $T_1$
 - **y = 1** im Main Memory, $T_2$ kopiert in eigenen Cache
 - $T_2$ liest vom eigenen Cache $\rightarrow$ **y = 1 & x = 0** $\rightarrow$ **a = 1 & b = 0**
 - **x = 1** im Main Memory, $T_2$ kopiert in eigenen Cache
 - > *oopsie*
+**FIX?**: Make `x` and `y` volatile.
 $\Rightarrow$ accesses  are not strictly atomic (*Lecture 18 pt 2*)
 ![[Memory illlustration.png]]
 #### in volatile fields
@@ -35,10 +36,39 @@ $\Rightarrow$ accesses  are not strictly atomic (*Lecture 18 pt 2*)
 **... rather don't use them**
 f.e. used in a ***turn*** variable context where else the different threads would have different views on the state of the variable => atomic
 
+#### more realistic example (code incorrect)
+```java
+class C {
+	boolean stop = false;
+	void f() {
+		while(!stop) {
+		// draw a monster
+		}
+	}
+	void g() {
+		stop = didUserQuit();
+	}
+}
+```
+
+> [!Error]
+> No *guarantee* Thread 1 will ever stop
+> 
+> will *likely* work in practise
+## Executions
+*Executions* combine *actions* with *ordering*:
++ Program Order
++ Synchronizes-With
++ Synchronization Order
++ Happens-before
 ## JMM : Program Order
-is a total order of intra-thread (not between threads) actions., does not provide an ordering guarantee for memory accesses. 
-***Intra**-thread consistency*: **Per thread**, the PO's order is consistent with the thread's isolated execution.
+> [!Definition] 
+> Program Order is a total order of intra-thread (not between threads) actions., does not provide an ordering guarantee for memory accesses. 
+ > 
+ > **Intra**-thread consistency: **Per thread**, the PO's order is consistent with the thread's isolated execution.
+ 
 ![[Pasted image 20240612160859.png]]
+![[ExamplePO.png]]
 ## Synchronization Actions (SA) & Synchronization Order (SO)
 ### SAs are...
 - **read/write** of a **volatile** variable
@@ -61,6 +91,9 @@ is a total order of intra-thread (not between threads) actions., does not provid
 
 **HB consistency**: When reading a variable, we see either the last write (in HB) or any other unordered write.
 ▪ This means races are allowed!
+
+![[ExampleSWOrder.png]]
+
 
 ## Memory Operations
 #Slides-Lecture-22 
