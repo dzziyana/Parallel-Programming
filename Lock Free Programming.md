@@ -65,3 +65,6 @@ See [[Progress Assumptions and Progress Conditions#Lock-free]] for further infor
 - head and tail as `AtomicReference` objects due to both having potential concurrency issues while being modified as intended
 - `first` and `last` variables for copies of `head and tail, CAS to try and set last.next
 - dequeuer is supposed to retry til failure, enqueuer does not attempt any retries
+
+#### With hypothetical DCAS (Double [[TAS and CAS|CAS]])
+![[UnboundedLockFreeQueueDCAS.png]]

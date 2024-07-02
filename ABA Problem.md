@@ -57,7 +57,7 @@ erroneously assumes that the overall state has not been changed."
 
 > [! Warning]
 > This obviously has a performance penalty
-### [[Transactional Memory (WIP)]]
+### [[Transactional Memory]]
 
 *Useful web resource:*
 https://www.baeldung.com/cs/aba-concurrency

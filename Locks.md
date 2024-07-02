@@ -63,7 +63,7 @@ A lock is defined as deadlock free if and only if when one or more threads are c
 + **Death of a thread in the CS** -> No progress at all
 + **Deadlocks / Livelocks**
 + Can not be used in **interrupt handlers** without precautions
-
+**Further Problems**: [[Transactional Memory#Problems with locking]]
 ### Spinlocks
 + missing FIFO behaviour
 + Computing resources wasted / performance degraded especially for long lived contention

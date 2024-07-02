@@ -1,4 +1,4 @@
-#Slides-Lecture-25
+#Slides-Lecture-26
 >[! A protocol for n threads:]
 > 1) All provide some value
 > 2) In the end, all agree on the same value (that was provided by at leas one thread)
