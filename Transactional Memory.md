@@ -72,6 +72,13 @@ It follows the **ACID** principle
 + (analogy to garbage collection:
   Dan Grossman. 2007. *"The transactional memory / garbage collection analogy"*. SIGPLAN Not. 42, 10 (October 2007), 695-706.)
 
+## Problems
++ Not clear what the best semantics for transactions are
++ getting good performance can be challenging
++ I/O operations
+  Can we perform I/O operations in a transaction?
+
+
 ## Implementation
 **Naive idea**: Big lock around all atomic sections
 + gives nearly all properties, but is **not scalable**
@@ -211,3 +218,50 @@ variables that were read, change**
 
 #### Transaction life time
 ![[TransactionLifeTime.png]]
+![[TMClockSuccessfulCommit.png]]![[TMClockAbortedCommit.png]]
+
+## Dining philosophers with Scala-STM
+#Slides-Lecture-27
+#TODO Link to Dining Philosophers
+![[DiningPhilosophersScalaSTM.png]]
+**Fork**
+```java
+private static class Fork {
+	public final Ref.View<Boolean> inUse = STM.newRef(false);
+}
+```
+**Philosophers**
+```java
+class PhilosopherThread extends Thread {
+	private final int meals;
+	private final Fork left;
+	private final Fork right;
+	public PhilosopherThread(Fork left, Fork right) {
+		this.left = left;
+		this.right = right;
+	}
+	public void run() {
+		for (int m = 0; m < meals; m++) {
+			// THINK
+			pickUpBothForks();
+			// EAT
+			putDownForks();
+		}
+	}
+	
+	private void pickUpBothForks() {
+		STM.atomic(new Runnable() { public void run() {
+			if (left.inUse.get() || right.inUse.get())
+				STM.retry();
+			left.inUse.set(true);
+			right.inUse.set(true);
+		}});
+	}
+	private void putDownForks() {
+		STM.atomic(new Runnable() { public void run() {
+			left.inUse.set(false);
+			right.inUse.set(false);
+		}});
+	}
+}
+```
