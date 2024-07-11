@@ -1,7 +1,6 @@
 #Slides-Lecture-19 
 # General
 
-
 >[!Warning]
 > When aquiring **multiple locks**, define an **order** on the objects you are trying to lock so that objects are always locked in the same order!
 > 

@@ -1,7 +1,7 @@
 #Slides-Lecture-26
 >[! A protocol for n threads:]
 > 1) All provide some value
-> 2) In the end, all agree on the same value (that was provided by at leas one thread)
+> 2) In the end, all agree on the same value (that was provided by at least one thread)
 
 ## Requirements on consensus protocol
 ### wait-free
@@ -83,14 +83,14 @@ $\Longrightarrow$ [[Linearizability]] of consensus must be such that first threa
  $\Rightarrow$ **It is impossible to implement [[TAS and CAS]] with Atomic Registers!** $\rightarrow$ that’s why extra hardware is needed
 
 ### Why do we care?
-+ [[Progress Assumptions and Progress Conditions#Wait-free|wait-free]] FIFO queues, wait-free [[TAS and CAS|RMW]] operations and [[TAS and CAS|CAS]] can not be implemented with atomic registers!
++ [[Progress Assumptions and Progress Conditions#Wait-free|wait-free]] FIFO queues, wait-free [[TAS and CAS|RMW]] operations and [[TAS and CAS|CAS]] **cannot** be implemented with atomic registers!
 Otherwise, this would contradict the consensus number of Atomic Registers. (See Theorem III for an example)
 
 ### TAS consensus
 ![[TAS consensus code.png]]
 #### ... It does not scale 
 TAS is inherently binary :
-- It returns true false, so a third one wouldn’t know which array index to return
+- It returns true/false, so a third one wouldn’t know which array index to return
 - Even if it returned the previous value, it can only be 0 or 1 $\rightarrow$ same issue
  $\Rightarrow$ The binary is not enough for n-thread consensus; same logic for **AtomicInteger.getAndSet(int new)** - It sets the given value and return the previous. It’s consensus number is also 2.
  

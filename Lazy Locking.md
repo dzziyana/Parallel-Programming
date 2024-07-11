@@ -1,8 +1,8 @@
 #Slides-Lecture-19 
-
 ## Lazy List
 - Works similar to an Optimistic List (see [[Optimistic Locking]]), but scans only once.
 - `contains()` is #wait-free!
+- Additional concept: "to logically remove an object"
 
 > [!Basic Idea]
 > Leave cleanup for later, mark nodes as deleted. 
@@ -15,8 +15,6 @@
 
 ## Lazy Skip List
 A **practical concurrent set implementation**
-
-
 ### Interface
  + `add`
 + `remove`

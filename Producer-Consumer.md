@@ -39,7 +39,8 @@ for the use of condition variables, see [[Monitors#Condition Interface]]
 ![[Pasted image 20240616180535.png]]
 
 ### Sleeping-Barber Variant
-Checks before signalling or awaiting if there is even a producer / consumer that is waiting
+...The basic premise is to optimize (avoid/reduce) notifications using counters
+Checks before signaling or awaiting if there is even a producer / consumer that is waiting
 > [!Info]
 >  $m \le 0 \Longleftrightarrow$ Buffer is full and $-m$ producers are waiting
 >  $n \le 0 \Longleftrightarrow$ Buffer is empty and $-n$ consumers are waiting

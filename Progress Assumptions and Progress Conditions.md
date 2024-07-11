@@ -16,7 +16,7 @@ So far, following assumption
 >In all schedulings, at least one thread is making progress $\Rightarrow$ **Guaranteed system-wide progress**
 
 ##### Wait-free
-- In all schedulings, every thread is eventually making progress $\Rightarrow$ **Guaranteed per-thread progress**
+- In all schedulings, every thread is eventually making progress $\Rightarrow$ **Guaranteed per-thread progress** (no thread's progress depends on the state of another thread)
 - Does not mean these threads may never wait - as long as it's for a finite time
 #### Blocking
 ##### [[Deadlock]] free

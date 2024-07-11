@@ -17,9 +17,6 @@ Or more concise from the lecture:
 memory location was modified temporarily by another activity and therefore
 erroneously assumes that the overall state has not been changed."
 ![[ABA4.png]]
-
-
-
 ## Concrete Example
 **We want to have a stack, but do not want to allocate for new nodes, rather have a pool that stores a set of nodes and reuses them**.
 ![[ABA1.png]]
@@ -38,7 +35,7 @@ erroneously assumes that the overall state has not been changed."
 + Too slow for e.g. the inner loop of a kernel
 ### Pointer Tagging
 > [!Warning]
-> Only delays the problem, can work in practise.
+> Only delays the problem, can work in practice.
 
 ![[ABA5.png]]
 ### Hazard Pointers

@@ -16,6 +16,8 @@
 >  such that $G$ is equivalent to a [[Histories#sequential|legal, sequential]] History $S$ with 
 >  $$\huge\rightarrow_G \subset \rightarrow_S$$
 
+Informally: Linearizability implies that there exists at least one valid execution order.
+
 > [!Note]
 > This directly implies [[Sequential Consistency]]
 > 

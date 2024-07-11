@@ -37,10 +37,13 @@ Conditions are always associated with a lock. **So firstly, instantiate one:**
 A lock can have multiple conditions:
 ![[Pasted image 20240615172745.png]]
 
-**.await()**
-- called with the lock held
-- **atomically** releases the lock and waits until thread is signaled
-- **guaranteed** to hold lock when returns
-- thread **always** needs to check condition
-**.signal{All}()**
+### `.await()`
+- called with the lock held, atomically **releases the lock and waits** until thread is signaled
+- guaranteed to **hold lock when returns** (as soon as condition is met)
+- thread **always** needs to check condition ($\rightarrow$ `while` instead of `if`)
+
+> [!NOTE]
+> ...If one calls `await()` with the lock **not held**, `IllegalMonitorStateException` occurs.
+
+### `signal{All}()`
 - called with the lock held

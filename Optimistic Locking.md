@@ -14,15 +14,15 @@
 ![[Optimistic Locking - LinkedList add.png]]
 ![[Optimistic Locking - LinkedList remove.png]]
 
-### `validate(Node pred, Node curr)` method
+### `validate(Node pred, Node curr)` 
 ![[Optimistic Locking - LinkedList validate.png]]
 
 ### Good
-+ No contention on traversals
-+ Traversals are wait-free (see [[Progress Assumptions and Progress Conditions#Wait-free]])
++ No contention on traversals (no locks are hindering each other anywhere during the phase of traversal)
++ Traversals are wait-free (cf. [[Progress Assumptions and Progress Conditions#Wait-free]])
 + less lock acquisitions
 ### Bad
 + need to always traverse twice
-+ `contains()` needs to acquire locks
-+ not starvation free
++ `contains()` needs to acquire locks! ( #TODO why)
++ not starvation-free!
 	+ The validation could always fail if another thread repeatedly inserts/removes the successor node of the locked node

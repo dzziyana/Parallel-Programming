@@ -23,6 +23,7 @@
 ![[RWLockMonitorWriter.png]]
 
 ## Monitor based implementation (after $k$ readers, writer)
+introduces an additional variable `writersWait` to keep track of if readers still have priority, which is set dynamically depending on how many readers wait at a time.s
 ![[RWLockMonitorAfterK.png]]
 
 ## code example

@@ -9,3 +9,4 @@ What is already covered in detail:
 - [ ] **TODO**: RE MARK #Slides-Lecture TAGS (due to the slides containing a lot more material than just the single lecture they were used in, a lot of the markers now refer in part to earlier lectures than they should. Use the **trimmed** versions of the slides whenever possible, otherwise check the adjacent lectures for **trimmed** versions)
 
 - [ ] Sleeping Barber  analogy
+- [ ] Sentinels in queues
