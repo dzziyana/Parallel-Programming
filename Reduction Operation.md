@@ -13,7 +13,7 @@ $T_{p} = O(\frac{T_{1}}{P} + T_{\infty}) = O(\frac{n}{P} + logn)$
 
 In contrast to the [[Map Operation]]
 
-![[Pasted image 20240612140634.png]]
+![[Map-Reduce figure 1.png]]
 
 
 ## Example with [[ForkJoin]] (Recursive Sum, no cutoff)

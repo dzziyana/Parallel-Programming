@@ -28,14 +28,14 @@ A monitor provides **a mechanism to check a condition** with following semantics
 - signaling process moves signaled process to waiting entry queue
 
 # Implementing a semaphore
-![[Pasted image 20240615172330.png]]
+![[Semaphore implementation.png]]
 > If, additionally, different threads evaluate different conditions, the notification has to be a **notifyAll**
 
 # Condition Interface
 Conditions are always associated with a lock. **So firstly, instantiate one:**
 `Lock lock = new ReentrantLock();`
 A lock can have multiple conditions:
-![[Pasted image 20240615172745.png]]
+![[Java Condition init.png]]
 
 ### `.await()`
 - called with the lock held, atomically **releases the lock and waits** until thread is signaled

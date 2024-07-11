@@ -79,10 +79,10 @@ E peek() {
 ```
 would be wrong, even if push() and pop() are synchronized, due to the inconsistent intermediate state it creates
 Invariant to start with: if there has been a push() and no pop(), then isEmpty() returns false...
-![[Pasted image 20240505134511.png]]
+![[races figure 1.png]]
 Moreover, we want to maintain the LIFO order when returning values.
-![[Pasted image 20240505134754.png]]
-![[Pasted image 20240505135018.png]]
+![[races figure 2.png]]
+![[races figure 3.png]]
 
 #### Number of interleavings
 #Slides-Lecture-15 

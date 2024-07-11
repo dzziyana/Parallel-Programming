@@ -31,7 +31,7 @@ The thread that first reaches the rendezvous-section of the code must wait for o
 #TODO "pre-charging semaphores" optimization
 ### Implementing semaphores without spinning
 via FIFO process list $Q_S$ :
-![[Pasted image 20240614175130.png]]
+![[Semaphores without spinning idea.png]]
 # Barrier - Rendezvous for n
 - all threads increment ***counter***
 - ***counter*** is a shared variable **-> protected by lock**

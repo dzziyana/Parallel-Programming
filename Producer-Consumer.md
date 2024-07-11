@@ -36,7 +36,7 @@ class Queue {
 ![[Producer-Consumer Queue with Monitor.png]]
 ### ... with explicit Lock using condition variables
 for the use of condition variables, see [[Monitors#Condition Interface]]
-![[Pasted image 20240616180535.png]]
+![[Producer-Consumer impl with conditon variables.png]]
 
 ### Sleeping-Barber Variant
 ...The basic premise is to optimize (avoid/reduce) notifications using counters

@@ -1,6 +1,6 @@
 # Stack
 ## valid methods
-![[Pasted image 20240612123846.png]]
+![[Java Stack methods.png]]
 # Queue
 - only present as an interface in Java
 - most common implementing classes are PriorityQueue and LinkedList, but those are not threads-safe

@@ -10,7 +10,7 @@ The Computation of an element of the result **does not** depend on another eleme
 ### Maps
 $T_{p} = O(\frac{T_{1}}{P} + T_{\infty}) = O(\frac{n}{P} + 1) = O(\frac{n}{P})$
 
-![[Pasted image 20240612140634.png]]
+![[Map-Reduce figure 1.png]]
 
 ## Example (Vector Addition)
 

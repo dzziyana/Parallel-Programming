@@ -30,5 +30,5 @@ So far, following assumption
 > [!Important]
 > Failure / Suspension of one thread cannot cause failure / suspension of other thread!
 ### Progress Conditions
-![[Pasted image 20240616184946.png]]
+![[Progress Conditions.png]]
 

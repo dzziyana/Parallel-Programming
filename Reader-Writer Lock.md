@@ -28,4 +28,4 @@ introduces an additional variable `writersWait` to keep track of if readers stil
 
 ## code example
 source: https://www.youtube.com/watch?v=ddUSe3A9MMg
-![[Pasted image 20240614132251.png]]
+![[RW lock youtube code.png]]

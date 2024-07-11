@@ -14,7 +14,7 @@ This was a question in an old exam.
 #### General comparison to [[ExecutorService (WIP)]]
 - uses a *pool* of threads
 
-![[Screenshot 2024-06-12 at 13.52.58.png]]
+![[ForkJoin figure 1.png]]
 
 
 
@@ -41,7 +41,7 @@ The **ForkJoin** library gives an **expected-time garantuee** that is asymptotic
 So
 $$T_p = O((T_1 / p) + T_\infty)$$
 # Pool
-![[Pasted image 20240612140235.png]]
+![[ForkJoin Pool.png]]
 
 # methods
 - **.compute()** - äquivalent zu Thread.run() (d.h. führt lediglich sequentiell den Code im selben Thread aus) aber kann im Gegensatz zu .run() auch einen Rückgabewert haben

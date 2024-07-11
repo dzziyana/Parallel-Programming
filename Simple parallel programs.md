@@ -19,9 +19,9 @@ output = input + from_left
 ```
 #### $\Rightarrow$ Parallelism is $\frac{n}{\log n}$
 ### Details :
-![[Pasted image 20240430124706.png]]
-![[Pasted image 20240430124823.png]]
-![[Pasted image 20240430124840.png]]
+![[prefixSum1.png]]
+![[prefixSum2.png]]
+![[prefixSum3.png]]
 The addition of a #SequentialCutoff :
 - **UP**: leaf nodes shall hold the sum of a range
 - **DOWN**:
@@ -60,4 +60,4 @@ FORALL (i=0; i < input.length; i++){
 - pack el-s greater than pivot into the right side of aux
 - put pivot inbetween and sort recursively
 ### => $O(logn)$ span for partition, in total $O(log^{2}n$) due to the default $O(logn)$ parallelism
-![[Pasted image 20240612153229.png]]
+![[QuickSort time complexity.png]]

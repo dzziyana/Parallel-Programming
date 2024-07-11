@@ -7,8 +7,8 @@ min (MAX_WAIT, wait_time * 2)
 ```
 
 # Implementation
-![[Pasted image 20240518145949.png]]
+![[Lock with Backoff implementation.png]]
 - the else block **goes to sleep for a while** - that's all what it does
 
 That's what the going to sleep part (backoff.backoff()) should look like:
-![[Pasted image 20240518150349.png]]
+![[Backoff function implementation.png]]

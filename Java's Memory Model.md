@@ -67,7 +67,7 @@ class C {
  > 
  > **Intra**-thread consistency: **Per thread**, the PO's order is consistent with the thread's isolated execution.
  
-![[Pasted image 20240612160859.png]]
+![[Programme Order.png]]
 ![[ExamplePO.png]]
 ## Synchronization Actions (SA) & Synchronization Order (SO)
 ### SAs are...

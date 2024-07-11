@@ -6,12 +6,12 @@ Both **TAS** and **CAS** are **Read-Modify-Write** operations
 > #Slides-Lecture-22
 > 
 
-![[Pasted image 20240613130444.png]]
+![[TAS-CAS.png]]
 Java does not have a true TAS operation :P
-![[Pasted image 20240613131004.png]]
+![[no true TAS in Java.png]]
 
 # TAS Lock and CAS Lock - [[Spinlock]]
-![[Pasted image 20240613130950.png]]
+![[TAS lock and CAS lock.png]]
 ## Problem mit TAS Lock
 lock-holder: `state = true` -> laufend neue Write-Action
 lock-contenders: Kopie von `state` laufend invalidiert, jedes Mal eine neue Kopie von Main Memory...

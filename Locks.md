@@ -30,7 +30,7 @@ $\rightarrow$ e.g. a spin wait  (cf. [[Spinlock]])
 > [!Definition]
 > a lock is **fair**, if for two processes _A_ and _B_, whenever _A_ finishes its doorway before _B_ starts its doorway, _A_ cannot be overtaken by _B_ :
 
-![[Pasted image 20240611192134.png]]
+![[Lock fairness formal notation.png]]
 #TODO *Legend for the notation. What do the variables in the exponent (j and k) exactly signify? Insert a reference to the part of the study material where this notation is introduced.*
 
 
